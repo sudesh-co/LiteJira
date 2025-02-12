@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {  FormGroup } from '@angular/forms';
+import { MaterialModule } from '../../material/material.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lite-box',
-  standalone:false,
+  standalone:true,
+  imports:[MaterialModule,CommonModule],
   templateUrl: './lite-box.component.html',
   styleUrls: ['./lite-box.component.scss']
 })

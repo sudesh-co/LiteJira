@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { MainLayoutComponent } from './shared/Layouts/main-layout/main-layout.component';
 
 export const routes: Routes = [
 
@@ -180,14 +180,14 @@ export const routes: Routes = [
   //    ]
   //},
 
-  { path: '', component: AppComponent },
-  {
-    path: 'authentication',
-    loadComponent: () => import('./Modules/authentication/authentication.component').then(m => m.AuthenticationComponent)
-    , children: [
-      { path: 'sign-in', loadComponent: () => import('./Modules/authentication/sign-in/sign-in.component').then(m => m.SignInComponent) },
-      { path: 'sign-up', loadComponent: () => import('./Modules/authentication/sign-up/sign-up.component').then(m => m.SignUpComponent) }]
-  }
+    { path: '', component: MainLayoutComponent },
+    {
+      path: 'auth',
+      loadChildren: () => import('./Modules/authantication/authantication.module').then(m => m.AuthanticationModule)
+    },
+    {path :'**' ,redirectTo: 'auth/sign-in', pathMatch: 'full' },
+    // Remove direct references to SignInComponent and SignUpComponent
+  
   //{
   //  path: 'authentication',
   //  loadComponent: () => import('./Modules/authentication/authentication.component').then(m => m.AuthenticationComponent)

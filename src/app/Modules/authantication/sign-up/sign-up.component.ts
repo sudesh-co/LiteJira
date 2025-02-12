@@ -2,11 +2,12 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CustomizerSettingsService } from '../../../shared/customizer-settings/customizer-settings.service';
-import { UtilsModule } from '../../../shared/utils/utils.module';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgIf } from '@angular/common';
+import { LiteBoxComponent } from '../../../shared/utils/reusable-components/lite-box/lite-box.component';
+import { MaterialModule } from '../../../shared/utils/material/material.module';
 @Component({
     selector: 'app-sign-up',
-    imports: [RouterLink, UtilsModule],
+    standalone:false,
     templateUrl: './sign-up.component.html',
     styleUrl: './sign-up.component.scss'
 })

@@ -1,19 +1,15 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgIf, isPlatformBrowser } from '@angular/common';
+import {  CommonModule, isPlatformBrowser, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { CustomizerSettingsService } from '../../../shared/customizer-settings/customizer-settings.service';
-import { UtilsModule } from '../../../shared/utils/utils.module';
+import { LiteBoxComponent } from '../../../shared/utils/reusable-components/lite-box/lite-box.component';
 import { MaterialModule } from '../../../shared/utils/material/material.module';
 
 @Component({
     selector: 'app-sign-in',
-    imports: [RouterLink, UtilsModule],
+    standalone: false,
     templateUrl: './sign-in.component.html',
     styleUrl: './sign-in.component.scss'
 })

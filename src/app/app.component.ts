@@ -10,19 +10,18 @@ import { CustomizerSettingsService } from './shared/customizer-settings/customiz
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, CommonModule, SidebarComponent, HeaderComponent, FooterComponent, CustomizerSettingsComponent, NgClass],
+    imports: [RouterOutlet, CommonModule], 
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
 
 export class AppComponent implements OnInit {
-
-
-  showAlert() {
-    if (isPlatformBrowser(this.platformId)) {
-      alert('This is a browser alert!');
+    showAlert() {
+        if (isPlatformBrowser(this.platformId)) {
+            alert('This is a browser alert!');
+        }
     }
-  }
+    
     // Title
     title = 'Daxa - Angular 19 Material Design Admin Dashboard Template';
 
@@ -33,8 +32,8 @@ export class AppComponent implements OnInit {
         public router: Router,
         private toggleService: ToggleService,
         private viewportScroller: ViewportScroller,
-      public themeService: CustomizerSettingsService,
-      @Inject(PLATFORM_ID) private platformId: object
+        public themeService: CustomizerSettingsService,
+        @Inject(PLATFORM_ID) private platformId: object
     ) {
         this.router.events.subscribe((event: Event) => {
             if (event instanceof NavigationEnd) {
@@ -44,8 +43,8 @@ export class AppComponent implements OnInit {
         this.toggleService.isSidebarToggled$.subscribe(isSidebarToggled => {
             this.isSidebarToggled = isSidebarToggled;
         });
-    }
-    ngOnInit(): void {
-    }
-
+        }
+        ngOnInit(): void {
+  }
+   
 }
