@@ -1,6 +1,6 @@
 <div [formGroup]="formGroup" class="custom-form-field">
   <label class="main-label d-block lh-1 text-black">{{Caption}}  <span style="color:red" title="required" *ngIf="IsReq">*</span></label>
-  <mat-form-field appearance="outline" class="w-100 ">
+  <mat-form-field appearance="outline" class="w-100 " >
     <input matInput
            [attr.autocomplete]="'off'"
            [class]="customclassname"
@@ -18,7 +18,6 @@
               {{hide ? 'visibility_off' : 'visibility'}}
             </span>
           </button>
-          <mat-label>{{lable}}</mat-label>
     <mat-error *ngIf="IsReq && hasError(field,'required')">{{Caption}} is required.</mat-error>
     <mat-error *ngIf="IsPattern && hasError(field,'pattern')">{{pattern_msg}}</mat-error>
     <mat-error *ngIf="max_min_msg && hasError(field,'maxminlength')">{{max_min_msg}}</mat-error>

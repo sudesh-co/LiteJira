@@ -19,10 +19,10 @@
               </div>
               <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                  <app-lite-box lable="Enter your email" field="email" Caption="Email" [Isnum]="'text'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
+                  <app-lite-box  field="email" Caption="Email" [Isnum]="'text'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
                 </div>
                 <div class="form-group">
-                  <app-lite-box lable="Enter your password" field="password" Caption="Password" [Isnum]="'password'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
+                  <app-lite-box  field="password" Caption="Password" [Isnum]="'password'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
                 </div>
                 <div class="info d-flex justify-content-between align-items-center">
                   <mat-checkbox>
@@ -60,11 +60,11 @@
             </div>
           </div>
           <!-- Image Column -->
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <div class="image-container">
               <img *ngIf="isBrowser" src="./under_construction.jpg" alt="Sign In Image" class="img-fluid">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

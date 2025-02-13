@@ -1,0 +1,82 @@
+::ng-deep .mat-mdc-form-field {
+  font-size: 8px !important; /* Reduce font size */
+}
+
+::ng-deep .mdc-text-field--outlined {
+  height: 36px !important; /* Reduce overall input height */
+}
+
+::ng-deep .mdc-floating-label {
+  top: 15px !important;
+  font-size: 13px !important;
+  transition: all 0.2s ease-in-out !important; /* Smooth transition */
+}
+
+/* Adjust when input is focused or has a value */
+::ng-deep .mdc-text-field--label-floating .mdc-floating-label {
+  transform: translateY(-20px) scale(0.85) !important; /* Keep label inside box */
+}
+
+/* Fix for mobile screens */
+@media (max-width: 767px) {
+  ::ng-deep .mat-mdc-form-field-infix {
+    min-height: 30px !important;
+  }
+  
+  ::ng-deep .mdc-text-field--filled .mdc-floating-label {
+    top: 16px !important;
+    font-size: 12px !important;
+  }
+
+  /* Ensure proper floating label behavior on small screens */
+  ::ng-deep .mdc-text-field--label-floating .mdc-floating-label {
+    transform: translateY(-18px) scale(0.8) !important;
+  }
+}
+::ng-deep .mat-mdc-form-field {
+  font-size: 14px !important; /* Reduce font size */
+}
+
+/* Adjust input height */
+::ng-deep .mdc-text-field--outlined {
+  height: 36px !important;
+}
+
+/* Ensure label stays in correct position when not focused */
+::ng-deep .mdc-floating-label {
+  top: 12px !important; /* Adjust label default position */
+  font-size: 13px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Fix for when label moves up on focus */
+::ng-deep .mdc-text-field--focused .mdc-floating-label,
+::ng-deep .mdc-text-field--label-floating .mdc-floating-label {
+  top: -8px !important; /* Keep label inside the box */
+  transform: scale(0.85) !important;
+}
+
+/* Ensure input height is correctly set */
+::ng-deep .mat-mdc-form-field-infix {
+  min-height: 30px !important;
+  padding-top: 8px !important; /* Adjust spacing for smaller input */
+  padding-bottom: 8px !important;
+}
+
+/* Fix for mobile screens */
+@media (max-width: 767px) {
+  ::ng-deep .mat-mdc-form-field-infix {
+    min-height: 28px !important;
+  }
+
+  ::ng-deep .mdc-text-field--filled .mdc-floating-label {
+    top: 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* Ensure proper floating label behavior on small screens */
+  ::ng-deep .mdc-text-field--label-floating .mdc-floating-label {
+    top: 0.2px !important; /* Keep label from going out */
+    transform: scale(0.8) !important;
+  }
+}
