@@ -1,24 +1,26 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CustomizerSettingsService } from '../../../shared/customizer-settings/customizer-settings.service';
-import { CommonModule, isPlatformBrowser, NgIf } from '@angular/common';
-import { LiteBoxComponent } from '../../../shared/utils/reusable-components/lite-box/lite-box.component';
-import { MaterialModule } from '../../../shared/utils/material/material.module';
+import {  isPlatformBrowser } from '@angular/common';
+import { AuthenticationService } from '../authentication.service';
 @Component({
     selector: 'app-sign-up',
     standalone:false,
     templateUrl: './sign-up.component.html',
     styleUrl: './sign-up.component.scss'
 })
-export class SignUpComponent {
-    isBrowser: boolean;
+export class SignUpComponent implements OnInit{
+   public isBrowser: boolean;
+   public hide = true;
+   public  authForm: FormGroup;
 
     constructor(
         private fb: FormBuilder,
         @Inject(PLATFORM_ID) private platformId: Object,
         private router: Router,
-        public themeService: CustomizerSettingsService
+        public themeService: CustomizerSettingsService,
+        private authService : AuthenticationService
     ) {
         this.isBrowser = isPlatformBrowser(this.platformId); 
         this.authForm = this.fb.group({
@@ -28,15 +30,16 @@ export class SignUpComponent {
             confirmPassword: ['', Validators.required], 
         });
     }
+    ngOnInit(): void {
+    }
 
-    // Password Hide
-    hide = true;
-
-    // Form
-    authForm: FormGroup;
     onSubmit() {
+        alert()
         if (this.authForm.valid) {
-            this.router.navigate(['/']);
+            this.authService.signIn(this.authForm.value).subscribe((res:any) => {
+                alert()
+                console.log(res);
+            })
         } else {
             console.log('Form is invalid. Please check the fields.');
         }

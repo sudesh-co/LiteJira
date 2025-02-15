@@ -1,16 +1,12 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule, NgClass, ViewportScroller, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
-import { SidebarComponent } from './shared/common/sidebar/sidebar.component';
-import { HeaderComponent } from './shared/common/header/header.component';
-import { FooterComponent } from './shared/common/footer/footer.component';
-import { CustomizerSettingsComponent } from './shared/customizer-settings/customizer-settings.component';
 import { ToggleService } from './shared/common/sidebar/toggle.service';
 import { CustomizerSettingsService } from './shared/customizer-settings/customizer-settings.service';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, CommonModule], 
+    imports: [RouterOutlet, CommonModule ], 
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

@@ -5,6 +5,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MaterialModule } from '../../shared/utils/material/material.module';
 import { LiteBoxComponent } from '../../shared/utils/reusable-components/lite-box/lite-box.component';
 import { AuthanticationRoutingModule } from './authantication-routing.module'; 
+import { AuthenticationService } from './authentication.service';
 
 @NgModule({
   declarations: [SignInComponent, SignUpComponent],
@@ -12,6 +13,7 @@ import { AuthanticationRoutingModule } from './authantication-routing.module';
     CommonModule,
     MaterialModule,
     LiteBoxComponent,
-    AuthanticationRoutingModule ]
+    AuthanticationRoutingModule ],
+    providers: [AuthenticationService]
 })
 export class AuthanticationModule { }
