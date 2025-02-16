@@ -3,6 +3,6 @@ import {  Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class AppSettings{
- MainApiPath: string="http://localhost:7100/api/";
+ public MainApiPath: string="http://localhost:5210/api/";
 
 }

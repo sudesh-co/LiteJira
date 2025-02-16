@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/Layouts/main-layout/main-layout.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
 
@@ -179,13 +180,28 @@ export const routes: Routes = [
   //        {path: 'remixicon', component: RemixiconComponent}
   //    ]
   //},
-
-    { path: '', component: MainLayoutComponent },
     {
-      path: 'auth',
+      path: 'auth', 
       loadChildren: () => import('./Modules/authantication/authantication.module').then(m => m.AuthanticationModule)
     },
-    {path :'**' ,redirectTo: 'auth/sign-in', pathMatch: 'full' },
+    {
+      path: '',
+      component: MainLayoutComponent,
+      canActivate: [AuthGuard], 
+      children: [
+        {
+          path: 'company',
+          loadChildren: () => import('./Modules/company/company.module').then(m => m.CompanyModule)
+        },
+        {
+          path: '', 
+          redirectTo: 'dashboard',
+          pathMatch: 'full'
+        }
+      ]
+    },
+    { path: '**', redirectTo: 'auth/login' }
+
     // Remove direct references to SignInComponent and SignUpComponent
   
   //{

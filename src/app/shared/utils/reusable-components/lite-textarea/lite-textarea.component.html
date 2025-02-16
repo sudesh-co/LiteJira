@@ -1,0 +1,32 @@
+<div [formGroup]="formGroup" class="custom-form-field">
+  <label class="main-label d-block lh-0.5 text-dark">
+    {{ Caption }}  
+    <span style="color:red" title="required" *ngIf="IsReq">*</span>
+  </label>
+
+    <textarea 
+      matInput
+      #textarea
+      [id]="field"
+      [name]="field"
+      [formControlName]="field"
+      [rows]="rows"
+      [placeholder]="placeholder"
+      [required]="IsReq"
+      (input)="autoGrow(textarea)"
+      (blur)="smartTextBlur($event)"
+      [maxlength]="maxLen">
+    </textarea>
+
+    <mat-error *ngIf="IsReq && hasError('required')">
+      {{ Caption }} is required.
+    </mat-error>
+    
+    <mat-error *ngIf="IsPattern && hasError('pattern')">
+      {{ pattern_msg }}
+    </mat-error>
+    
+    <mat-error *ngIf="max_min_msg && hasError('maxminlength')">
+      {{ max_min_msg }}
+    </mat-error>
+</div>

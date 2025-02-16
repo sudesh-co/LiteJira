@@ -34,9 +34,8 @@ export class SignUpComponent implements OnInit{
     }
 
     onSubmit() {
-        alert()
         if (this.authForm.valid) {
-            this.authService.signIn(this.authForm.value).subscribe((res:any) => {
+            this.authService.signUp(this.authForm.value).subscribe((res:any) => {
                 alert()
                 console.log(res);
             })

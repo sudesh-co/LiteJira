@@ -9,5 +9,7 @@ dist/
 build/
 
 # Environment files
-
 .env
+
+# Angular cache
+.angular/cache/

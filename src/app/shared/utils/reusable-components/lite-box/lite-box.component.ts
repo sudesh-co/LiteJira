@@ -16,8 +16,8 @@ export class LiteBoxComponent implements OnInit {
     @Input() field: string = '';
     @Input() IsReq: boolean = false;
     @Input() IsPattern: boolean = false;
-    @Input() IsBlockAllChar: boolean = false; // use this  property to block all char in smart text box field , make [IsBlockAllChar]=  true  
-    @Input() IsBlockAllNum: boolean = false; // use this  property to block all num in smart text box field , make [IsBlockAllNum]=  true  
+    @Input() IsBlockAllChar: boolean = false;
+    @Input() IsBlockAllNum: boolean = false; 
     @Input() pattern_msg: string = '';
     @Input() check_max_min: boolean = true;
     @Input() max_min_msg: string = '';
@@ -107,11 +107,6 @@ export class LiteBoxComponent implements OnInit {
         control_value = this.formGroup.controls[this.field].value;
       }
       return /^\-?\d*\.?\d*$/.test(control_value + evt.key);
-      //var element: HTMLInputElement = (evt.target as HTMLInputElement);
-      ////var previous_value = element.getAttribute("data_previous_value");
-      //if (!(/^\-?\d*\.?\d*$/.test(element.value))) {
-      //  element.value = this.old_value;
-      //}
     }
   
     bit_key(evt: any): boolean {

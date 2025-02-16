@@ -38,13 +38,16 @@ import { MatTreeModule } from '@angular/material/tree';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [],
   exports: [
     MatAutocompleteModule,
     MatBadgeModule,
+    NgxEditorModule,
+    FormsModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -97,6 +100,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
+    FormsModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,
@@ -121,7 +125,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTreeModule,
     CdkMenuModule,
     DragDropModule,
-    MatFormFieldModule, ReactiveFormsModule
+    MatFormFieldModule, 
+    ReactiveFormsModule,
+    NgxEditorModule
   ]
 })
 export class MaterialModule { }

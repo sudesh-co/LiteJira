@@ -1,11 +1,11 @@
 ::ng-deep {
     .header-area {
-        top: 2px;
+        top: 0.3px;
         left: 282px;
-        right: 5px;
+        right: 1px;
         z-index: 101;
         height: auto;
-        padding: 12px;
+        padding: 8px;
         position: fixed;
     
         .header-left-side {
@@ -31,6 +31,7 @@
                             transform-origin: 10% 90%;
                             margin-top: 5px;
                         }
+                        
                     }
                 }
             }
@@ -1495,6 +1496,18 @@
     }
 
 }
-
+.custom-button {
+    background-color: #3388ff !important; 
+    color: white;
+    border-radius: 3px;
+    padding: 8px 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #3388ff; 
+  }
+  
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}

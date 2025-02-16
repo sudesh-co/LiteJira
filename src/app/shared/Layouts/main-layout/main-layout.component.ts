@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { Router, NavigationEnd, RouterOutlet } from '@angular/router'; // Import necessary event type
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { CommonModule, isPlatformBrowser, NgClass, ViewportScroller } from '@angular/common';
 import { ToggleService } from '../../common/sidebar/toggle.service';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
@@ -15,9 +15,8 @@ import { CustomizerSettingsComponent } from '../../customizer-settings/customize
   styleUrl: './main-layout.component.scss'
 })
 export class MainLayoutComponent implements OnInit {
-  title = 'Daxa - Angular 19 Material Design Admin Dashboard Template';
+  title = 'main-layout';
 
-  // isSidebarToggled
   isSidebarToggled = false;
 
   constructor(
@@ -39,11 +38,5 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  showAlert() {
-    if (isPlatformBrowser(this.platformId)) {
-      alert('This is a browser alert!');
-    }
   }
 }

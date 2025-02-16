@@ -1,0 +1,22 @@
+<div [formGroup]="formGroup" class="custom-dropdown">
+    <label class="dropdown-label">{{ Caption }} <span *ngIf="IsReq" class="required">*</span></label>
+    
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-select 
+        [formControlName]="field"
+        [multiple]="isMultiSelect"
+        [disabled]="disabled"
+        (selectionChange)="onSelectionChange($event)">
+  
+        <mat-option *ngFor="let option of options" [value]="option[valueField]">
+          {{ option[displayField] }}
+        </mat-option>
+  
+      </mat-select>
+      
+      <mat-error *ngIf="IsReq && formGroup.controls[field].hasError('required')">
+        {{ Caption }} is required.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  

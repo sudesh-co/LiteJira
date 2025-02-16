@@ -27,6 +27,33 @@
         <div class="sidebar-inner">
             <div class="sidebar-menu">
                 <mat-accordion>
+
+                    <span class="sub-title text-body">
+                        MAIN
+                    </span>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i class="material-symbols-outlined">
+                                    home
+                                </i>
+                                <span class="title">
+                                    Compony
+                                </span>
+                                <span class="daxa-badge">
+                                    1
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul class="sidebar-sub-menu">
+                            <li class="sidemenu-item">
+                                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidemenu-link">
+                                    Metaverse
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+
                     <span class="sub-title text-body">
                         MAIN
                     </span>

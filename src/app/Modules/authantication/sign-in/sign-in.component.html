@@ -11,9 +11,9 @@
           <h2 class="title">Sign In to LiteJira</h2>
           <p class="subtitle">Manage your projects efficiently</p>
           
-          <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="authForm" >
               <div class="form-group">
-                <app-lite-box  field="email" Caption="Email" [Isnum]="'text'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
+                <app-lite-box  field="username" Caption="UserName" [Isnum]="'text'" [formGroup]="authForm" [IsReq]="true" [maxLen]="20"></app-lite-box>
 
               </div>
               <div class="form-group">
@@ -21,10 +21,10 @@
 
               </div>
               <div class="options">
-                  <mat-checkbox>Remember me</mat-checkbox>
-                  <a href="#" routerLink="/authentication/forgot-password" class="d-inline-block text-daxa forgot-password">Forgot password?</a>
+                <app-lite-checkbox [formGroup]="authForm"Caption="Remember Me"field="remember_me"></app-lite-checkbox>
+                 <a href="#" routerLink="/authentication/forgot-password" class="d-inline-block text-daxa forgot-password">Forgot password?</a>
               </div>
-              <button type="submit" class="sign-in-btn" [disabled]="authForm.invalid">
+              <button type="submit" class="sign-in-btn" [disabled]="authForm.invalid" (click)="login()">
                   Sign In
               </button>
           </form>

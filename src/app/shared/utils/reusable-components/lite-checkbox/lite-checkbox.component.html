@@ -1,0 +1,16 @@
+<div [formGroup]="formGroup" class="custom-form-field">
+    <mat-checkbox 
+        class="w-100"
+        [id]="field"
+        [name]="field"
+        [formControlName]="field"
+        [required]="IsReq"
+        (change)="smartTextValueChange($event)">
+        {{ Caption }}  
+        <span style="color:red" title="required" *ngIf="IsReq">*</span>
+        </mat-checkbox>
+
+    <mat-error *ngIf="IsReq && hasError(field,'required')">{{ Caption }} is required.</mat-error>
+    <mat-error *ngIf="IsPattern && hasError(field,'pattern')">{{ pattern_msg }}</mat-error>
+    <mat-error *ngIf="max_min_msg && hasError(field,'maxminlength')">{{ max_min_msg }}</mat-error>
+</div>
